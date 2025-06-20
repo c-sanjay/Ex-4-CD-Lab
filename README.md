@@ -14,7 +14,7 @@ To write a YACC program to recognize a valid variable which starts with a letter
 8.	Enter a statement as input and the valid variables are identified as output.
 # PROGRAM
 ## .l file
-```
+```c
 %{
 #include "y.tab.h"
 #include <string.h>
@@ -30,7 +30,7 @@ int yywrap() {
     return 1;
 }
 
-```
+```c
 ## .y file
 ```
 %{
