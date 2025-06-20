@@ -22,11 +22,13 @@ To write a YACC program to recognize a valid variable which starts with a letter
 
 %%
 
-"int" { return INT; } "float" { return FLOAT; }
+"int" { return INT; }
+"float" { return FLOAT; }
 "double" { return DOUBLE; }
 
 [a-zA-Z][a-zA-Z0-9]* {
-printf("\nIdentifier is %s", yytext); return ID;
+printf("\nIdentifier is %s", yytext);
+return ID;
 }
 
 . { return yytext[0]; }
@@ -35,7 +37,8 @@ printf("\nIdentifier is %s", yytext); return ID;
 
 %%
 
-int yywrap() { return 1;
+int yywrap() {
+return 1;
 }
 
 ```
@@ -54,13 +57,16 @@ L: L ',' ID   | ID;
 T: INT | FLOAT | DOUBLE;
 
 %%
-extern FILE *yyin; int main() {
+extern FILE *yyin;
+int main() {
 do {
 yyparse();
-} while (!feof(yyin)); return 0;
+}
+while (!feof(yyin)); return 0;
 }
 
-void yyerror(char *s) { fprintf(stderr, "Error: %s\n", s);
+void yyerror(char *s) {
+ fprintf(stderr, "Error: %s\n", s);
 }
 ```
 # Output
