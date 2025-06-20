@@ -1,6 +1,6 @@
 # Ex-4-LETTER-FOLLOWED-BY-ANY-NUMBER-OF-LETTERS-OR-DIGITS-USING-YACC
 RECOGNITION OF A VALID VARIABLE WHICH STARTS WITH A LETTER FOLLOWED BY ANY NUMBER OF LETTERS OR DIGITS USING YACC
-# Date: 24/04/2025
+# Date: 29/04/2025
 # Aim:
 To write a YACC program to recognize a valid variable which starts with a letter followed by any number of letters or digits.
 # ALGORITHM
@@ -30,9 +30,9 @@ int yywrap() {
     return 1;
 }
 
-```c
-## .y file
 ```
+## .y file
+```c
 %{
 #include <stdio.h>
 #include <stdlib.h>
